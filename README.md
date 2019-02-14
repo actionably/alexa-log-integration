@@ -33,15 +33,14 @@ already exists.
 
 ### 2. Add Dashbot Library Configuration
 
-In your lambda function that handles Alexa Skills requests, configure the imported dashbot  
-library with the `logGroupName` option:
+In your lambda function that handles Alexa Skills requests, call the logIntegration method 
+on the dashbot alexa object giving configuration options as specified by the 
+[dashbot-logger](https://github.com/actionably/dashbot-logger) library. The minimum parameter
+to set is the logGroupName that you have specified above when creating your CloudFormation stack.
 
-(TODO: Change option call)
 ```javascript
-{
-  logRoute: {
-    logGroupName: '/test/log-group'
-  }
-}
+const dashbot = require('dashbot')('YOUR_DASHBOT_API_KEY').alexa.logIntegration({logGroupName: 'YOUR_LOG_GROUP_NAME'});
 ```
 
+Replace the `YOUR_DASHBOT_API_KEY` and the `YOUR_LOG_GROUP_NAME` with your Dashbot API key and
+the log group name you specified above.  
