@@ -24,9 +24,6 @@ Parameters:
   DashbotApiKey:
     Description: API Key from Dashbot
     Type: String
-  ExistingResourcesStack:
-    Description: the name of the existing resources stack
-    Type: String
   LogFilter:
     Default: ''
     Description: string to match on log to filter on stream
@@ -35,8 +32,7 @@ Parameters:
     Description: name of log group to apply filter on
     Type: String
   NodeEnvironment:
-    Description: the node environment, basically for distinguishing errors by environmet
-      in airbrake
+    Description: the node environment
     Type: String
 Resources:
   CustomLogGroup:
